@@ -10,7 +10,7 @@ export class ServicesService {
 
   constructor(private http:HttpClient) { }
 
-  fetchMovies(){
+  fetchOffers(){
     return this.http.get<Offer[]>(' http://localhost:3000/movies')
   }
   addOffer(data:Offer){

@@ -1,24 +1,19 @@
 {
-  "offre": [
+  "movies": [
     {
-      "id": 1,
-      "title": "data analyst",
-      "company": "vermeg",
-      "description": "it company",
-      "nbCandidate": 19
+      "nomfilm": "intersellar",
+      "description": "fff",
+      "nbPlace": "12",
+      "raiting": 5,
+      "nomSalle": "carthage",
+      "id": 2
     },
     {
-      "id": 2,
-      "title": "developer web",
-      "company": "sofrecom",
-      "description": "company it",
-      "nbCandidate": 30
-    },
-    {
-      "title": "test",
-      "company": "test",
+      "nomfilm": "intersellar",
       "description": "test",
-      "nbCandidate": "20",
+      "nbPlace": "12",
+      "raiting": 0,
+      "nomSalle": "carthage",
       "id": 3
     }
   ],
