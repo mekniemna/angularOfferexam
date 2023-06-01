@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {ServicesService} from "../../services/services.service";
-import {Offer} from "../../models/offer.model";
-import {of} from "rxjs";
+
 import {Router} from "@angular/router";
+import {MovieService} from "../../services/movie.service";
+import {Movie} from "../../models/movie";
 
 @Component({
   selector: 'app-home',
@@ -11,37 +11,47 @@ import {Router} from "@angular/router";
 })
 export class HomeComponent implements OnInit {
 
-  listOffer!:Offer[];
-  constructor(private OffreService:ServicesService,private router:Router) { }
+  listMovie:Movie[]=[];
+
+  constructor(private router:Router , private movieService:MovieService) { }
 
   ngOnInit(): void {
-   this.getallOffers();
+ this.fetchAllMovie();
   }
 
 
-  postuler(offer: Offer) {
-  offer.nbCandidate=offer.nbCandidate-1;
-  console.log(offer.nbCandidate);
-  this.OffreService.updateOffre(offer,offer.id).subscribe(
-    data=>{
-      this.getallOffers()
-    },
-    error => console.log(error)
-  )
+
+
+
+  navigate(id: number) {
+    this.router.navigate(['/details',id]);
   }
 
-  private getallOffers() {
-    this.OffreService.fetchOffers().subscribe(
+
+
+  fetchAllMovie(){
+    this.movieService.fetchMovies().subscribe(
       data=>{
-        this.listOffer=data;
+        this.listMovie=data;
       },
       error=>{
-        console.log();
+
       }
     )
   }
 
-  navigate(id: number) {
-    this.router.navigate(['/details',id]);
+  affectRating(movie: Movie) {
+    if(movie.raiting<5){
+      movie.raiting=movie.raiting+1;
+    }
+    this.movieService.updateMovie(movie,movie.id).subscribe(
+      data=>{
+        this.fetchAllMovie();
+      },
+      error=>{
+
+      }
+    )
+
   }
 }

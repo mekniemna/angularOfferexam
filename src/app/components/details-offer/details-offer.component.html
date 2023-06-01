@@ -1,9 +1,5 @@
-<p>Detail de l'offre {{offer.id}}</p>
-
-
+<p>Detail de le film  {{movie.id}}</p>
 <ul>
-  <li>{{offer.title}}</li>
-  <li>{{offer.description}}</li>
-  <li>{{offer.company}}</li>
-
+  <li> le film {{movie.nomfilm}} sera projecté au cinéma dans la salle
+    de {{movie.nomSalle}} <button class="btn-dark" (click)="removeFilm(movie.id)"> Remove film </button></li>
 </ul>

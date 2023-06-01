@@ -1,0 +1,45 @@
+
+
+<p>Ajouter une nouvelle movie</p>
+
+<form #f="ngForm"(ngSubmit)="save(f)"  class="  w-100 align-items-center">
+  <div class="form-control">
+    <label>film</label>
+    <input name="nomfilm" type="text" class="form-control" ngModel  #t="ngModel"  minlength="3" pattern="[a-zA-Z]*">
+  </div>
+  <div class=" alert alert-danger" *ngIf="t.invalid && t.touched">
+    <div *ngIf="t.errors?.['minlength']">
+      the title must be 3 caracters
+    </div>
+    <div *ngIf="t.errors?.['pattern']">
+      the film must be letter
+    </div>
+  </div>
+
+
+
+  <div class="form-control">
+    <label>Description</label>
+    <input name="description" type="text" class="form-control" ngModel required  #d="ngModel">
+  </div>
+  <div class=" alert alert-danger" *ngIf="d.invalid && d.touched">
+    the society  is required field
+  </div>
+
+  <div class="form-control">
+    <label>Nombre de place</label>
+    <input name="nbPlace" type="text" class="form-control" ngModel required  #c="ngModel" pattern="[0-9]*">
+  </div>
+  <div class=" alert alert-danger" *ngIf="c.invalid && c.touched">
+    <div *ngIf="c.errors?.['required']">
+      the nbplace  is required field
+    </div>
+    <div *ngIf="c.errors?.['pattern']">
+      the nbPlace  must be number
+    </div>
+
+  </div>
+
+
+  <button class="btn btn-success" [disabled]="f.invalid"  type="submit" >save</button>
+</form>
