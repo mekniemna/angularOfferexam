@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {ServicesService} from "../../services/services.service";
-import {Offer} from "../../models/offer.model";
-import {of} from "rxjs";
-import {Movie} from "../../models/movie";
-import {MovieService} from "../../services/movie.service";
+import {Course} from "../../models/course";
 
 @Component({
   selector: 'app-details-offer',
@@ -12,17 +9,17 @@ import {MovieService} from "../../services/movie.service";
   styleUrls: ['./details-offer.component.css']
 })
 export class DetailsOfferComponent implements OnInit {
-idfilm!:any;
-movie!:Movie;
-  constructor(private activatedRoute:ActivatedRoute,private movieService:MovieService,private router:Router) { }
+id!:any;
+cour!:Course;
+  constructor(private activatedRoute:ActivatedRoute,private courService:ServicesService,private router:Router) { }
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(
       (params)=>{
-        this.idfilm=params.get('id')!;
-        this.movieService.getMovieById(this.idfilm).subscribe(
+        this.id=params.get('id')!;
+        this.courService.getCourseById(this.id).subscribe(
           data=>{
-            this.movie=data;
+            this.cour=data;
           },
           error =>
             console.log(error)
@@ -32,16 +29,5 @@ movie!:Movie;
     )
   }
 
-  removeFilm(id: number) {
-    this.movieService.removeMovie(id).subscribe(
-      data=>{
-        this.router.navigate(['/home']);
-      }
-      ,
-      error=>{
 
-      }
-    )
-
-  }
 }

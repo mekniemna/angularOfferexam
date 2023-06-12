@@ -1,20 +1,12 @@
 {
-  "movies": [
+  "courses": [
     {
-      "nomfilm": "intersellar",
+      "id": 1,
       "description": "fff",
-      "nbPlace": "12",
-      "raiting": 5,
-      "nomSalle": "carthage",
-      "id": 2
-    },
-    {
-      "nomfilm": "intersellar",
-      "description": "test",
-      "nbPlace": "12",
-      "raiting": 0,
-      "nomSalle": "carthage",
-      "id": 3
+      "title": "12",
+      "like": 5,
+      "dislike": 2,
+      "skills": "test"
     }
   ],
   "profile": {

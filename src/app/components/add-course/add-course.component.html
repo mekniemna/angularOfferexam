@@ -1,8 +1,8 @@
 
 
-<p>Ajouter une nouvelle movie</p>
+<p>Ajouter une nouvelle course</p>
 
-<form #f="ngForm"(ngSubmit)="save(f)"  class="  w-100 align-items-center">
+<form #f="ngForm" (ngSubmit)="save(f)"  class="  w-100 align-items-center">
   <div class="form-control">
     <label>title</label>
     <input name="title" type="text" class="form-control" ngModel  #t="ngModel"  minlength="3" pattern="[a-zA-Z]*">
@@ -26,11 +26,11 @@
 
   <div class="form-control">
     <label>skills</label>
-    <input name="skills" type="text" class="form-control" ngModel   #c="ngModel" pattern="[a-zA-Z]*">
+    <input name="skills" type="text" class="form-control" ngModel   #s="ngModel" pattern="[a-zA-Z]*">
   </div>
-  <div class=" alert alert-danger" *ngIf="c.invalid && c.touched">
+  <div class=" alert alert-danger" *ngIf="s.invalid && s.touched">
 
-    <div *ngIf="c.errors?.['pattern']">
+    <div *ngIf="s.errors?.['pattern']">
       the skills  must be number
     </div>
 

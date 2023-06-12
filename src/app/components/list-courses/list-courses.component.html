@@ -1,1 +1,43 @@
-<p>list-courses works!</p>
+
+
+<div class="container mt-4" >
+
+  <input type="text">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">title</th>
+      <th scope="col">description</th>
+      <th scope="col">skills</th>
+      <th scope="col">##</th>
+
+
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let cour of listCourses">
+      <th scope="row">{{cour.id}}</th>
+      <td>{{cour.title}}</td>
+      <td>{{cour.description}}</td>
+      <td>{{cour.skills}}</td>
+      <td><a class="btn-dark" (click)="navigate(cour.id)"> Detail</a></td>
+
+
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

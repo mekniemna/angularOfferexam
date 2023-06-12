@@ -9,6 +9,8 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 import { HomeComponent } from './components/home/home.component';
 import { DetailsOfferComponent } from './components/details-offer/details-offer.component';
 import { AddMovieComponent } from './components/add-movie/add-movie.component';
+import { AddCourseComponent } from './components/add-course/add-course.component';
+import { ListCoursesComponent } from './components/list-courses/list-courses.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { AddMovieComponent } from './components/add-movie/add-movie.component';
     NotfoundComponent,
     HomeComponent,
     DetailsOfferComponent,
-    AddMovieComponent
+    AddMovieComponent,
+    AddCourseComponent,
+    ListCoursesComponent
   ],
   imports: [
     BrowserModule,
