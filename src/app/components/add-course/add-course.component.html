@@ -4,15 +4,15 @@
 
 <form #f="ngForm"(ngSubmit)="save(f)"  class="  w-100 align-items-center">
   <div class="form-control">
-    <label>film</label>
-    <input name="nomfilm" type="text" class="form-control" ngModel  #t="ngModel"  minlength="3" pattern="[a-zA-Z]*">
+    <label>title</label>
+    <input name="title" type="text" class="form-control" ngModel  #t="ngModel"  minlength="3" pattern="[a-zA-Z]*">
   </div>
   <div class=" alert alert-danger" *ngIf="t.invalid && t.touched">
     <div *ngIf="t.errors?.['minlength']">
-      the film name  must be 3 caracters
+      the title name  must be 3 caracters
     </div>
     <div *ngIf="t.errors?.['pattern']">
-      the film  name must be letter
+      the course  name must be letter
     </div>
   </div>
 
@@ -25,17 +25,17 @@
 
 
   <div class="form-control">
-    <label>Nombre de place</label>
-    <input name="nbPlace" type="text" class="form-control" ngModel   #c="ngModel" pattern="[0-9]*">
+    <label>skills</label>
+    <input name="skills" type="text" class="form-control" ngModel   #c="ngModel" pattern="[a-zA-Z]*">
   </div>
   <div class=" alert alert-danger" *ngIf="c.invalid && c.touched">
 
     <div *ngIf="c.errors?.['pattern']">
-      the nbPlace  must be number
+      the skills  must be number
     </div>
 
   </div>
 
 
-  <button class="btn btn-success" [disabled]="f.invalid"  type="submit" >save</button>
+  <button class="btn btn-outline-dark" [disabled]="f.invalid"  type="submit" >enregistrer</button>
 </form>
